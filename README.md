@@ -71,3 +71,11 @@ Request body:
   "type": "GAME",
   "completionDate": "1992-12-31"
 }
+```
+
+## Project steps
+
+1. Created Spring Boot project using Spring Initializr: Gradle - Groovy, Java v21. Dependencies: Spring Web, PostgreSQL Driver, Spring Data JPA.
+2. Created simple, one-table database model for now. Allowed items to be input are BOOK and GAME.
+3. Created basic CRUD operations.
+4. Added validation for title and item type. Customized error messages to be shown in the JSON error response.

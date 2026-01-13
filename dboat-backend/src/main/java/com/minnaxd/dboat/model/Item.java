@@ -2,6 +2,8 @@ package com.minnaxd.dboat.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "items")
@@ -11,13 +13,13 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@NotNull
+    @NotBlank(message = "Please provide a title for this item")
     @Column(nullable = false)
     private String title;
 
-    //@NotNull
-    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Please specify item type (e.g. GAME or BOOK)")
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ItemType type;
 
     private LocalDate completionDate;

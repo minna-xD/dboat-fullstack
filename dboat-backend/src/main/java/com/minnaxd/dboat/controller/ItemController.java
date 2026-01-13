@@ -4,6 +4,7 @@ import com.minnaxd.dboat.model.Item;
 import com.minnaxd.dboat.repository.ItemRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -23,10 +24,13 @@ public class ItemController {
         return itemRepository.findAll();
     }
 
-    // Maybe add validation?
     @PostMapping
-    public Item createItem(@RequestBody Item item) {
-        return itemRepository.save(item);
+    // public Item createItem(@RequestBody Item item) {
+    //     return itemRepository.save(item);
+    // }
+    public ResponseEntity<Item> createItem(@Valid @RequestBody Item item) {
+        Item savedItem = itemRepository.save(item);
+        return ResponseEntity.ok(savedItem);
     }
 
     @PutMapping("/{id}")
