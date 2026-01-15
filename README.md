@@ -82,3 +82,4 @@ Request body:
 5. Added simple tests for POST endpoint.
 6. Created an Angular app with ```ng new```
 7. Switched favicon.ico with an icon from https://icon-icons.com/icon/archives-folders-office/78536.
+8. Set up Docker Engine and Docker Compose (because developing on a Debian VM; Docker Desktop is recommended for native environments).
