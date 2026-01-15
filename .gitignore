@@ -1,3 +1,5 @@
+.gradle
+.gitattributes
 dboat-backend/HELP.md
 dboat-backend/.gradle
 dboat-backend/build/
@@ -35,3 +37,47 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Angular added
+
+# Compiled output
+dboat-frontend/dboat/dist
+dboat-frontend/dboat/tmp
+dboat-frontend/dboat/out-tsc
+dboat-frontend/dboat/bazel-out
+
+# Node
+dboat-frontend/dboat/node_modules
+dboat-frontend/dboat/npm-debug.log
+dboat-frontend/dboat/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+dboat-frontend/dboat/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+dboat-frontend/dboat/.history/*
+
+# Miscellaneous
+dboat-frontend/dboat/.angular/cache
+dboat-frontend/dboat/.sass-cache/
+dboat-frontend/dboat/connect.lock
+dboat-frontend/dboat/coverage
+dboat-frontend/dboat/libpeerconnection.log
+dboat-frontend/dboat/testem.log
+dboat-frontend/dboat/typings
+dboat-frontend/dboat/__screenshots__/
+
+# System files
+.DS_Store
+Thumbs.db

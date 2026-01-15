@@ -79,3 +79,6 @@ Request body:
 2. Created simple, one-table database model for now. Allowed items to be input are BOOK and GAME.
 3. Created basic CRUD operations.
 4. Added validation for title and item type. Customized error messages to be shown in the JSON error response.
+5. Added simple tests for POST endpoint.
+6. Created an Angular app with ```ng new```
+7. Switched favicon.ico with an icon from https://icon-icons.com/icon/archives-folders-office/78536.

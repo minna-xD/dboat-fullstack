@@ -1,0 +1,12 @@
+<ul *ngIf="items$ | async as items">
+  <li *ngFor="let item of items">
+    {{ item.title }} ({{ item.type }})
+
+    <button (click)="deleteItem(item.id!)">
+      Delete
+    </button>
+  </li>
+  <li *ngIf="items.length === 0">
+    No items yet.
+  </li>
+</ul>

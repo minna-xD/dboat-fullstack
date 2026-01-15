@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input type="text" formControlName="title" placeholder="Title" />
+
+  <select formControlName="type">
+    <option value="BOOK">Book</option>
+    <option value="GAME">Game</option>
+  </select>
+
+  <input type="date" formControlName="completionDate" />
+  <textarea formControlName="notes" placeholder="Notes"></textarea>
+  <input type="text" formControlName="author" placeholder="Author" />
+
+  <button type="submit">Add</button>
+</form>

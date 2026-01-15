@@ -186,13 +186,11 @@
   <div class="content">
     <div class="left-side">
       <h1>Database of All Things</h1>
-      <ul>
-        <li *ngFor="let item of items">
-          {{ item.title }} ({{ item.type }})
-        </li>
-      </ul>
+      <app-item-form></app-item-form>
+      <app-item-list></app-item-list>
     </div>
     <div class="right-side">
+      <img src="dboat.png" id="logo" />
     </div>
   </div>
 </main>
