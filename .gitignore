@@ -41,15 +41,15 @@ out/
 ### Angular added
 
 # Compiled output
-dboat-frontend/dboat/dist
-dboat-frontend/dboat/tmp
-dboat-frontend/dboat/out-tsc
-dboat-frontend/dboat/bazel-out
+dboat-frontend/dist
+dboat-frontend/tmp
+dboat-frontend/out-tsc
+dboat-frontend/bazel-out
 
 # Node
-dboat-frontend/dboat/node_modules
-dboat-frontend/dboat/npm-debug.log
-dboat-frontend/dboat/yarn-error.log
+dboat-frontend/node_modules
+dboat-frontend/npm-debug.log
+dboat-frontend/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -61,22 +61,22 @@ dboat-frontend/dboat/yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-dboat-frontend/dboat/.vscode/*
+dboat-frontend/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-dboat-frontend/dboat/.history/*
+dboat-frontend/.history/*
 
 # Miscellaneous
-dboat-frontend/dboat/.angular/cache
-dboat-frontend/dboat/.sass-cache/
-dboat-frontend/dboat/connect.lock
-dboat-frontend/dboat/coverage
-dboat-frontend/dboat/libpeerconnection.log
-dboat-frontend/dboat/testem.log
-dboat-frontend/dboat/typings
-dboat-frontend/dboat/__screenshots__/
+dboat-frontend/.angular/cache
+dboat-frontend/.sass-cache/
+dboat-frontend/connect.lock
+dboat-frontend/coverage
+dboat-frontend/libpeerconnection.log
+dboat-frontend/testem.log
+dboat-frontend/typings
+dboat-frontend/__screenshots__/
 
 # System files
 .DS_Store

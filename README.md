@@ -22,7 +22,7 @@ Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using 
 
 ### Prerequisites
 
-- Java 17+
+- Java 17+ (recommend 21)
 - PostgreSQL (local instance or Docker)
 - Node.js & npm (for Angular frontend)
 - Gradle (for backend build)
@@ -37,10 +37,9 @@ cd dboat-fullstack
 ```
 2. Configure backend database in backend/src/main/resources/application.properties:
 
-```spring.datasource.url=jdbc:postgresql://localhost:5432/your_db_name
+```spring.datasource.url=your_db_url
 spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
-spring.jpa.hibernate.ddl-auto=update
 ```
 
 3. Run the backend:
