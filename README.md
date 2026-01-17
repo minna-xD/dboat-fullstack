@@ -1,14 +1,14 @@
 # Database of All Things (DBoAT)
 
-A small fullstack application to track various consumed media, such as books I've read and games I've played (v. 0.1).
-Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using **Angular** and **TypeScript**.
+A small fullstack application to track various consumed media, such as books I've read and games I've played.
+Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using **Angular**.
 
 ---
 
 ## Features
 
+- Show items in a list with details (type, date, title, author (for bookx), notes (optional))
 - Create, read, update, and delete items (books and games, for now)
-- PostgreSQL database.
 - RESTful API for backend operations
 
 ⚠ This project uses a local PostgreSQL database. Update application.properties to match your DB credentials.
@@ -17,6 +17,7 @@ Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using 
 
 - **Backend:** Java, Spring Boot, Gradle, PostgreSQL, Spring Data JPA
 - **Frontend:** TypeScript, Angular, HTML&CSS
+- Docker & Docker Compose
 
 ## Getting Started
 
@@ -42,14 +43,11 @@ spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
 ```
 
-3. Run the backend:
-```cd dboat-backend
-./gradlew bootRun
-```
-
-4. Run the frontend:
-
-TODO
+3. Start commands \
+Backend: ```./gradlew bootRun``` \
+Frontend: ```npm install
+ng serve``` \
+Docker: ```docker compose up```
 
 ### API Endpoints
 
@@ -69,6 +67,12 @@ Request body:
   "title": "Minesweeper",
   "type": "GAME",
   "completionDate": "1992-12-31"
+}
+{
+  "title": "Reamde",
+  "type": "BOOK",
+  "completionDate": "2013-01-07",
+  "author": "Neal Stephenson"
 }
 ```
 
@@ -94,3 +98,4 @@ Request body:
 1. Add form validation
 1. Sort list by date (newest first)
 1. Add more media types
+1. Authentication to restrict form access

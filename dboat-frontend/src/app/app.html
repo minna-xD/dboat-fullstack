@@ -63,11 +63,11 @@
   <div class="content">
     <div class="left-side">
       <h1>Database of All Things</h1>
-      <app-item-form [editingItem]="editingItem" (submitForm)="onFormSubmit($event)" (cancel)="cancelEdit()"></app-item-form>
       <app-item-list [items]="items$ | async" (edit)="onEditItem($event)" (delete)="onDeleteItem($event)"></app-item-list>
     </div>
     <div class="right-side">
       <img src="dboat.png" id="logo" />
+      <app-item-form [editingItem]="editingItem" (submitForm)="onFormSubmit($event)" (cancel)="cancelEdit()"></app-item-form>
     </div>
   </div>
 </main>
