@@ -1,34 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
 import { Item } from './models/item.model';
-import { ItemService } from './services/item.service';
 
 @Component({
   standalone: true,
   selector: 'app-item-list',
   imports: [CommonModule],
-  templateUrl: './item-list.component.html'
+  templateUrl: './item-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent {
 
-  items$!: Observable<Item[]>;
+  @Input() items: Item[] | null = null;
+  @Output() edit = new EventEmitter<Item>();
+  @Output() delete = new EventEmitter<number>();
 
-  constructor(private itemService: ItemService) {}
-
-  ngOnInit(): void {
-    this.loadItems();
+  onEdit(item: Item) {
+    this.edit.emit(item);
   }
 
-  loadItems(): void {
-    this.items$ = this.itemService.getItems();
+  onDelete(id?: number) {
+    if (id == null) return;
+    this.delete.emit(id);
   }
 
-  deleteItem(id: number): void {
-    if (!confirm('Delete this item?')) return;
-
-    this.itemService.deleteItem(id).subscribe(() => {
-      this.loadItems(); // refresh list
-    });
+  trackById(_: number, item: Item) {
+    return item.id;
   }
 }

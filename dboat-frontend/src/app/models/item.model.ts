@@ -1,8 +1,15 @@
+export enum ItemType {
+  BOOK = 'BOOK',
+  GAME = 'GAME'
+  // Allows expanding
+}
+
 export interface Item {
   id?: number;
   title: string;
-  type: 'BOOK' | 'GAME';
-  completionDate?: Date | null;
+  type: ItemType;
+  completionDate?: Date;
   notes?: string;
   author?: string;
 }
+

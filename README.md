@@ -82,3 +82,7 @@ Request body:
 6. Created an Angular app with ```ng new```
 7. Switched favicon.ico with an icon from https://icon-icons.com/icon/archives-folders-office/78536.
 8. Set up Docker Engine and Docker Compose (because developing on a Debian VM; Docker Desktop is recommended for native environments).
+    * Nginx build script created an "extra" browser folder which caused some confusion. Fixed by adjusting COPY path in Dockerfile.
+    * Noticed that resulting website (if accessing with localhost) should – of course – be tested inside the VM, not on the host machine...
+9. Added editing of existing items to form.
+    * At this point, changed frontend code to utilize enum also on frontend side so that I don't have to hard-code values.

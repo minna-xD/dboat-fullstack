@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ItemService } from './services/item.service';
+import { FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { Item, ItemType } from './models/item.model';
 
 @Component({
   standalone: true,
@@ -9,30 +9,39 @@ import { ItemService } from './services/item.service';
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './item-form.component.html'
 })
-export class ItemFormComponent implements OnInit {
+export class ItemFormComponent implements OnChanges  {
 
-  form!: FormGroup;
+  @Input() editingItem: Item | null = null;
+  @Output() submitForm = new EventEmitter<Item>();
+  @Output() cancel = new EventEmitter<void>();
 
-  constructor(
-    private fb: FormBuilder,
-    private itemService: ItemService
-  ) {}
+  form = new FormGroup({
+    title: new FormControl<string>('', { nonNullable: true }),
+    type: new FormControl<ItemType>(ItemType.GAME, { nonNullable: true })
+  });
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      title: ['', Validators.required],
-      type: ['GAME', Validators.required],
-      completionDate: [''],
-      notes: [''],
-      author: ['']
-    });
+  itemTypes = Object.values(ItemType);
+
+  ngOnChanges() {
+    if (this.editingItem) {
+      this.form.patchValue(this.editingItem);
+    }
   }
 
-  submit(): void {
-    if (this.form.invalid) return;
+  submit() {
+    if (!this.form.value.title || !this.form.value.type) {
+      return;
+    }
 
-    this.itemService.addItem(this.form.value as any).subscribe(() => {
-      this.form.reset({ type: 'GAME' });
-    });
+    const item: Item = {
+      title: this.form.value.title,
+      type: this.form.value.type
+    };
+
+    this.submitForm.emit(item);
+  }
+
+  cancelEdit() {
+    this.cancel.emit();
   }
 }
