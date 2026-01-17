@@ -6,13 +6,13 @@ import { Item } from './models/item.model';
 import { ItemService } from './services/item.service';
 import { ItemFormComponent } from './item-form.component';
 import { ItemListComponent } from './item-list.component';
+import { form } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, ItemFormComponent, ItemListComponent, RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './app.html'
 })
 export class App {
   items$: Observable<Item[]>;

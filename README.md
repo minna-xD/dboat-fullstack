@@ -75,14 +75,22 @@ Request body:
 ## Project steps
 
 1. Created Spring Boot project using Spring Initializr: Gradle - Groovy, Java v21. Dependencies: Spring Web, PostgreSQL Driver, Spring Data JPA.
-2. Created simple, one-table database model for now. Allowed items to be input are BOOK and GAME.
-3. Created basic CRUD operations.
-4. Added validation for title and item type. Customized error messages to be shown in the JSON error response.
-5. Added simple tests for POST endpoint.
-6. Created an Angular app with ```ng new```
-7. Switched favicon.ico with an icon from https://icon-icons.com/icon/archives-folders-office/78536.
-8. Set up Docker Engine and Docker Compose (because developing on a Debian VM; Docker Desktop is recommended for native environments).
+1. Created simple, one-table database model for now. Allowed items to be input are BOOK and GAME.
+1. Created basic CRUD operations.
+1. Added validation for title and item type. Customized error messages to be shown in the JSON error response.
+1. Added simple tests for POST endpoint.
+1. Created an Angular app with ```ng new```
+1. Switched favicon.ico with an icon from https://icon-icons.com/icon/archives-folders-office/78536.
+1. Set up Docker Engine and Docker Compose (because developing on a Debian VM; Docker Desktop is recommended for native environments).
     * Nginx build script created an "extra" browser folder which caused some confusion. Fixed by adjusting COPY path in Dockerfile.
     * Noticed that resulting website (if accessing with localhost) should – of course – be tested inside the VM, not on the host machine...
-9. Added editing of existing items to form.
+1. Added editing of existing items to form.
     * At this point, changed frontend code to utilize enum also on frontend side so that I don't have to hard-code values.
+1. Struggled with view updating after database is updated.
+1. Changed buttons to icons (free for commercial use from https://icon-icons.com).
+
+## Next steps
+
+1. Add form validation
+1. Sort list by date (newest first)
+1. Add more media types

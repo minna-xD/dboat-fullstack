@@ -1,9 +1,12 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="itemForm" (ngSubmit)="submit()">
   <input formControlName="title" placeholder="Title">
   <select formControlName="type">
     <option *ngFor="let t of itemTypes" [value]="t">{{ t }}</option>
   </select>
+  <input type="date" formControlName="completionDate">
+  <input formControlName="author" placeholder="Author">
+  <textarea formControlName="notes" placeholder="Notes"></textarea>
 
-  <button type="submit">{{ editingItem ? 'Update' : 'Add' }}</button>
-  <button type="button" *ngIf="editingItem" (click)="cancelEdit()">Cancel</button>
+  <button type="submit"><img src="{{ editingItem ? 'edit.png' : 'add.png' }}"/></button>
+  <button type="button" *ngIf="editingItem" (click)="cancelEdit()"><img src="delete.png"/></button>
 </form>

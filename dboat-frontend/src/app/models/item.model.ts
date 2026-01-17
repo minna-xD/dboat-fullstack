@@ -8,7 +8,7 @@ export interface Item {
   id?: number;
   title: string;
   type: ItemType;
-  completionDate?: Date;
+  completionDate?: string;
   notes?: string;
   author?: string;
 }

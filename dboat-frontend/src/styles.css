@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+img#logo {
+    width: 128px;
+    height: 128px;
+}
+
+input, textarea {
+    display: block;
+}
+
+ul#itemlist {
+  list-style-type: none;
+}
+
+button {
+    padding: 2px;
+    border: none;
+    background: none;
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+}
