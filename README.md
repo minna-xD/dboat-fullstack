@@ -3,8 +3,6 @@
 A small fullstack application to track various consumed media, such as books I've read and games I've played.
 Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using **Angular**.
 
----
-
 ## Features
 
 - Show items in a list with details (type, date, title, author (for bookx), notes (optional))
@@ -30,12 +28,8 @@ Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using 
 
 ### Setup
 
-1. Clone the repo:
+1. Clone the repo
 
-```bash
-git clone git@github.com:minna-xD/dboat-fullstack.git
-cd dboat-fullstack
-```
 2. Configure backend database in backend/src/main/resources/application.properties:
 
 ```spring.datasource.url=your_db_url
@@ -43,11 +37,17 @@ spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
 ```
 
-3. Start commands \
-Backend: ```./gradlew bootRun``` \
-Frontend: ```npm install
-ng serve``` \
-Docker: ```docker compose up```
+## Running locally
+
+### Backend
+```./gradlew bootRun```
+
+### Frontend
+```npm install``` \
+```ng serve```
+
+### Docker
+```docker compose up```
 
 ### API Endpoints
 
