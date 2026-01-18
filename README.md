@@ -99,3 +99,4 @@ Request body:
 1. Sort list by date (newest first)
 1. Add more media types
 1. Authentication to restrict form access
+1. Filter list view by item type

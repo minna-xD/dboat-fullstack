@@ -1,14 +1,49 @@
+body {
+    background-color: Snow;
+}
+div.right-side {
+    text-align: left;
+}
+
+h1 {
+    padding-bottom: 50px;
+}
+
 img#logo {
     width: 128px;
     height: 128px;
+    display: block;
+    margin: auto;
 }
 
-input, textarea {
+input, textarea, select {
     display: block;
+    margin: 10px;
 }
 
 ul#itemlist {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#itemlist li {
+    padding: 5px 5px 15px 5px;
+}
+
+ul#itemlist span.title {
+    font-weight: bold;
+}
+
+ul#itemlist ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+ul#itemlist ul li {
+    padding: 0 0 0 25px;
+    margin: 0;
 }
 
 button {
@@ -20,4 +55,12 @@ button {
 button img {
     width: 20px;
     height: 20px;
+}
+
+form button {
+    margin-left: 10px;
+}
+
+span.editButtons {
+    vertical-align: middle;
 }

@@ -75,5 +75,11 @@ export class ItemFormComponent implements OnInit, OnChanges  {
 
   cancelEdit() {
     this.cancel.emit();
+    this.itemForm.reset({
+      title: '',
+      type: ItemType.GAME,
+      completionDate: this.todayISO(),
+      author: null
+    });
   }
 }

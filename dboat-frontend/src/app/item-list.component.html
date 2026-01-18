@@ -2,8 +2,13 @@
   <li *ngFor="let item of items; trackBy: trackById">
     <span *ngIf="item.type == 'BOOK'">📔</span>
     <span *ngIf="item.type == 'GAME'">🎮</span>
-    {{ item.completionDate }}: {{ item.title }} {{ item. author }}
-    <button (click)="onEdit(item)"><img src="edit.png"/></button>
-    <button (click)="onDelete(item.id)"><img src="delete.png"/></button>
+    {{ item.completionDate }}: <span class="title">{{ item.title }}</span> {{ item. author }}
+    <span class="editButtons">
+      <button (click)="onEdit(item)"><img src="edit.png"/></button>
+      <button (click)="onDelete(item.id)"><img src="delete.png"/></button>
+    </span>
+    <ul *ngIf="item.notes"><li>{{ item.notes }}</li></ul>
   </li>
 </ul>
+
+<div *ngIf="items?.length == 0">... add the first item ...</div>

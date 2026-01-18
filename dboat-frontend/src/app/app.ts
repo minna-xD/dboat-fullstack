@@ -6,7 +6,6 @@ import { Item } from './models/item.model';
 import { ItemService } from './services/item.service';
 import { ItemFormComponent } from './item-form.component';
 import { ItemListComponent } from './item-list.component';
-import { form } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-root',
