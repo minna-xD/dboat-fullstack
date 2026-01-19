@@ -21,16 +21,14 @@ Backend built with **Java & Spring Boot** and **PostgreSQL**. Frontend is using 
 
 ### Prerequisites
 
-- Java 17+ (recommend 21)
+- Java 17+ (developed using 21)
 - PostgreSQL (local instance or Docker)
 - Node.js & npm (for Angular frontend)
 - Gradle (for backend build)
 
-### Setup
+### Configuration
 
-1. Clone the repo
-
-2. Configure backend database in backend/src/main/resources/application.properties:
+1. Backend database configuration for development is in ```backend/src/main/resources/application.properties```:
 
 ```spring.datasource.url=your_db_url
 spring.datasource.username=your_db_user
@@ -39,27 +37,33 @@ spring.datasource.password=your_db_password
 
 ## Running locally
 
-### Backend
-```./gradlew bootRun```
-
-### Frontend
+### Start backend and frontend separately
+In subfolder dboat-backend: \
+```./gradlew bootRun``` \
+In subfolder dboat-frontend: \
 ```npm install``` \
 ```ng serve```
 
-### Docker
+### Or with Docker
+In app root folder: \
 ```docker compose up```
 
-### API Endpoints
+Frontend runs on ```http://localhost:4200```
 
-| Method | Endpoint           | Description                |
-|--------|------------------|----------------------------|
+### Live demo on Render (free tier)
+https://dboat-frontend.onrender.com/
+
+## API Endpoints
+
+| Method | Endpoint          | Description                  |
+|--------|-------------------|------------------------------|
 | GET    | `/api/items`      | Retrieve a list of all items |
 | GET    | `/api/items/{id}` | Retrieve a single item by ID |
-| POST   | `/api/items`      | Create a new item           |
-| PUT    | `/api/items/{id}` | Update an existing item     |
-| DELETE | `/api/items/{id}` | Delete an item by ID        |
+| POST   | `/api/items`      | Create a new item            |
+| PUT    | `/api/items/{id}` | Update an existing item      |
+| DELETE | `/api/items/{id}` | Delete an item by ID         |
 
-**POST /api/items**
+### POST /api/items
 
 Request body:
 ```json
@@ -76,7 +80,7 @@ Request body:
 }
 ```
 
-## Project steps
+## Project notes (for self)
 
 1. Created Spring Boot project using Spring Initializr: Gradle - Groovy, Java v21. Dependencies: Spring Web, PostgreSQL Driver, Spring Data JPA.
 1. Created simple, one-table database model for now. Allowed items to be input are BOOK and GAME.
@@ -92,6 +96,7 @@ Request body:
     * At this point, changed frontend code to utilize enum also on frontend side so that I don't have to hard-code values.
 1. Struggled with view updating after database is updated.
 1. Changed buttons to icons (free for commercial use from https://icon-icons.com).
+1. Enabled API URL configuration in an Angular environment file to enable settings for Render.
 
 ## Next steps
 
