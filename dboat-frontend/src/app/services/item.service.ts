@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Item } from '../models/item.model';
+import { environment } from '../../environments/environment';
+fetch(environment.apiUrl);
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
-  private readonly apiUrl = 'http://localhost:8080/api/items';
+  //private readonly apiUrl = 'http://localhost:8080/api/items';
+  private readonly apiUrl = environment.apiUrl;
 
   private itemsSubject = new BehaviorSubject<Item[]>([]);
   items$ = this.itemsSubject.asObservable();
