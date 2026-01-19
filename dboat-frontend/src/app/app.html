@@ -63,6 +63,7 @@
   <div class="content">
     <div class="left-side">
       <h1>Database of All Things</h1>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
       <app-item-list [items]="items$ | async" (edit)="onEditItem($event)" (delete)="onDeleteItem($event)"></app-item-list>
     </div>
     <div class="right-side">
