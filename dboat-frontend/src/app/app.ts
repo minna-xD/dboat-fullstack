@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 export class App implements OnInit {
   items$: Observable<Item[]>;
   editingItem: Item | null = null;
+  errorMessage = "";
 
   constructor(private itemService: ItemService) {
     this.items$ = this.itemService.items$;
@@ -50,5 +51,9 @@ export class App implements OnInit {
 
   onDeleteItem(id: number) {
     this.itemService.deleteItem(id).subscribe();
+  }
+
+  getErrorMessage() {
+    this.errorMessage = this.itemService.getErrorMessage();
   }
 }
